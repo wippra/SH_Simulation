@@ -22,11 +22,11 @@ Python 3 is a requirement for this program.
 
 - `-r` or `--hitler` Selects the agent (set of strategies) that Hitler will follow in any iteration of the game (*Defualt*: GenericHitlerAgent)
 
-- `-p` or `--numPlayers` Selects the number of players in any iteration of the game (*Default*: 5, *Range*:{5,6,7,8,9,10}, *Note*: Overriden if the `--all` option is True)
+- `-p` or `--numPlayers` Selects the number of players in any iteration of the game (*Default*: 5, *Range*:{5,6,7,8,9,10}, *Note*: Overriden if the `--all` option is true)
 
 - `-n` or `--numGames` Selects the number of iterations/games that the program will run for (*Default*: 1, *Note*: Running a single game will print out the event details of that game.)
 
-- `-a` or `--all` Gives the option to run through all possible number of players in the game [5-10], as opposed to only a single number of players.
+- `-a` or `--all` Gives the option to run through all possible number of players in the game [5-10], as opposed to only a single number of players. (*Default*: false, *Range*:{true, false})
 
 ### Examples
 

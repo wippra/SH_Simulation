@@ -435,7 +435,7 @@ if __name__=='__main__':
     parser.add_argument("-r", "--hitler", required=False, default='GenericHitlerAgent', help="The agent (strategies) to be used by Hitler.")
     parser.add_argument("-p", "--numPlayers", required=False, default=5, help="The number of players in the game [5-10].", type=int, choices={5,6,7,8,9,10})
     parser.add_argument("-n", "--numGames", required=False, default=1, help="The number of games to run. Running a single game will print out the event details of that game.", type=int)
-    parser.add_argument("-a", "--all", required=False, default=False, help="Iterates over all possible number of players [5-10], as opposed to just a specific number of players.", type=bool, choices={True, False})
+    parser.add_argument("-a", "--all", required=False, default='false', help="Iterates over all possible number of players [5-10], as opposed to just a specific number of players", choices={'true', 'false'})
     args = parser.parse_args()
     
     game = SH_Game()
@@ -465,20 +465,21 @@ if __name__=='__main__':
     N = args.numGames #N=1 to view a game, N=10000 for testing
 
     P = args.numPlayers
-
+    
     for p in range(5,11):
-        if not args.all and args.numPlayers != p:
-            continue
+        if args.all == 'false':
+            if p != P:
+                continue
         records = []
         result = []        
-        #if P!=0 and p!=P: continue
+
         for i in range(N):
             game.new_game(p, l_a, f_a, h_a)
             records.append(game.play_game())
             result.append(game.result())            
-        if N==1 and not args.all: 
+        if N == 1 and args.all == 'false':
             game.print_game()
-        if N > 1 or args.all:   
+        if N>1 or (N==1 and args.all == 'true'):
             print('with '+str(p)+' players, fascists win: '+str(sum([1 if x=='F' else 0 for x in records])/N))
             print('percent of the time')
             print('liberals win with cards: ' + str(sum([1 if x=='liberal cards'  else 0 for x in result])/N))
