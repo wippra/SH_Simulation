@@ -10,6 +10,8 @@
 
 ## Running the Simulation
 
+Python 3 is a requirement for this program.
+
 `secret_hitler.py` This is the main file which runs the program, which takes the following *optional* arguments
 
 - `-h` Provides a guide of commands
