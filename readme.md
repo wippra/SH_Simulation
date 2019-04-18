@@ -46,8 +46,8 @@ We have specified the following agents:
 
 - `RandomAgent` Chooses randomly over all given options for each action.
 - `GenericLiberalAgent` Uses a Trust system to try and make informed decisions. For example, this agent chooses the player with the highest trust value when selecting a chancellor.
-	- `RiskLiberalAgent` Follows most TrustLiberalAgent strategies, except as a president given 2 Liberals and 1 Fascist, they will give the chancellor a choice. This might provide information about players that would otherwise go undiscovered.
-	- `MixedLiberalAgent` Follows most TrustLiberalAgent strategies, except as a president given 2 Liberals and 1 Fascist, they will give the chancellor a choice as long as the liberals are winning and forcing a liberal would not win the game.
+	- `RiskLiberalAgent` Follows most GenericLiberalAgent strategies, except as a president given 2 Liberals and 1 Fascist, they will give the chancellor a choice. This might provide information about players that would otherwise go undiscovered.
+	- `MixedLiberalAgent` Follows most GenericLiberalAgent strategies, except as a president given 2 Liberals and 1 Fascist, they will give the chancellor a choice as long as the liberals are winning and forcing a liberal would not win the game.
 - `GenericFascistAgent` Makes intuitive fascist plays, such as playing fascist policies when available.
 	- `PassiveFascistAgent` Follows most GenericFascistAgent strategies, except it tries to gain trust (by playing liberal policies) when the fascists are already ahead.
-- `GenericHitlerAgent` Follows most GenericLiberalAgent strategies to avoid suspicision. However, in certain cases, making a fascist play would win the game, and this agent will take those actions.
+- `GenericHitlerAgent` Follows most GenericLiberalAgent strategies to avoid suspicion. However, in certain cases, making a fascist play would win the game, and this agent will take those actions.
