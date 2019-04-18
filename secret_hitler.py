@@ -454,12 +454,12 @@ if __name__=='__main__':
     class_ = getattr(module, args.liberal)
     l_a = class_
     
-    module = importlib.import_module(args.liberal)
-    class_ = getattr(module, args.liberal)
+    module = importlib.import_module(args.fascist)
+    class_ = getattr(module, args.fascist)
     f_a = class_
     
-    module = importlib.import_module(args.liberal)
-    class_ = getattr(module, args.liberal)
+    module = importlib.import_module(args.hitler)
+    class_ = getattr(module, args.hitler)
     h_a = class_
     
     N = args.numGames #N=1 to view a game, N=10000 for testing
