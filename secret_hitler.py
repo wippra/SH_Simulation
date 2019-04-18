@@ -171,11 +171,7 @@ class SH_Game:
             self.last_president = None
             self.last_chancellor = None
     
-    #set the action to be done when next(self.generator) is called by gym environments
-    def set_action(self,action):
-        self.action = action    
-    
-    #core game logic (optional arguments)
+    #core game logic
     def do_round(self):
         N = len(self.agents)
 
@@ -284,7 +280,6 @@ class SH_Game:
                             if claim=='F': accusation = 2
                             actual = 1
                             if invest.get_role()=='L': actual = 0
-                            round_info[president.index].invest_actual = actual
                             self.history += [{'event':'investigation',
                                               'president':president.index,
                                               'invest':invest.index,
@@ -336,7 +331,7 @@ class SH_Game:
     #looping of core game logic until a victor is found
     def play_game(self):
         while not self.win():
-            self.do_round() # self.do_round() is a generator object, not a function
+            self.do_round()
         return self.win()
 
 if __name__=='__main__':
